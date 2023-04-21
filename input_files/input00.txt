@@ -1,0 +1,12 @@
+a1 |- c.
+a2 |- c.
+b1 |- d.
+b2 |- d.
+
+assumption(a1).
+assumption(b1).
+
+contrary(a1, d).
+contrary(a2, d).
+contrary(b1, c).
+contrary(b2, c).

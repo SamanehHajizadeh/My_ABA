@@ -1,0 +1,12 @@
+a |- p.
+b,s |- q.
+c |- r.
+
+assumption(a).
+assumption(b).
+assumption(c).
+
+
+contrary(a, q).
+contrary(b, p).
+contrary(c, q,r).

@@ -1,12 +1,12 @@
-from .aba_graph import ABA_Graph
-from .aba_dispute_tree import ABA_Dispute_Tree
-from .aba_constants import *
-import networkx as nx
-import logging
 import functools
 
+import networkx as nx
 
-class ABA():
+from .abadisputetree import AbaDisputeTree
+from .aba_graph import ABA_Graph
+
+
+class ABA_framework():
     def __init__(self):
         self.symbols = []
         self.rules = []
@@ -18,10 +18,11 @@ class ABA():
         self.potential_arguments = []
         self.dispute_trees = []
 
-    def is_all_assumption_have_contrary(self):
-        """
-        Each assumption must have a contrary.
-        """
+    """
+    Each assumption must have a contrary.
+    """
+
+    def flag_for_contrary(self):
         all_assumption_have_contrary = True
         for assumption in self.assumptions:
             if assumption not in self.contraries.keys():
@@ -29,7 +30,10 @@ class ABA():
                 break
         return all_assumption_have_contrary
 
-    #infer_assumptions to extract the assumptions from the contraries
+    """    
+    Infer_assumptions to extract the assumptions from the contraries
+    """
+
     def extract_assumptions_from_contraries(self):
         self.nonassumptions = list(self.symbols)
 
@@ -41,11 +45,14 @@ class ABA():
             if assumption in self.nonassumptions:
                 self.nonassumptions.remove(assumption)
 
-    #To construct the argument trees
-    #Check if all assumptions have its contrary
-    #It append instances of ABA_Graph objects to “potential_arguments” and appended to “arguments” if satisfy criteria being an actual argument
+    """
+    To construct the argument trees
+    Check if all assumptions have its contrary
+    It append instances of ABA_Graph objects to “potential_arguments” and appended to “arguments” if satisfy criteria being an actual argument  
+    """
+
     def construct_arguments(self):
-        if not self.is_all_assumption_have_contrary():
+        if not self.flag_for_contrary():
             raise Exception("All assumptions must have contrary")
 
         for symbol in self.symbols:
@@ -56,7 +63,7 @@ class ABA():
                     self.arguments.append((potential_argument, i))
 
     def generates_instances_of_Dispute_Tree_and_append_to_dispute_trees(self):
-        if not self.is_all_assumption_have_contrary():
+        if not self.flag_for_contrary():
             raise Exception("All assumptions must have contrary")
 
         args_grounded = {}
@@ -65,45 +72,23 @@ class ABA():
             if argument:
                 if argument.root not in args_grounded:
                     args_grounded[argument.root] = False
-                if args_grounded[argument.root]:  # if grounded, then also must be admissible
-                    logging.debug("Skipping DT <%s, %d>", argument.root, i)
-                    # Skipping DT generation if previously a grounded DT has been found
+                if args_grounded[argument.root]:
+                    print("Skipping DT ", argument.root, i)
                     continue
 
-                print("ABA_Dispute_Tree <%s>" % argument)
                 self.append_to_dispute_trees(args_grounded, argument, i)
-
-        print("__determine_dispute_tree_is_ideal")
-        self.__determine_dispute_tree_is_ideal()
-
-        print("__determine_dispute_tree_is_complete")
-        self.__determine_dispute_tree_is_complete()
+        #self.__determine_dispute_tree_is_complete()
 
     def append_to_dispute_trees(self, args_grounded, argument, i):
-        dt = ABA_Dispute_Tree(self, argument, i)
+        dt = AbaDisputeTree(self, argument, i)
         self.dispute_trees.append(dt)
         args_grounded[argument.root] = functools.reduce(lambda x, y: x or y, dt.is_grounded)
 
-    def __determine_dispute_tree_is_ideal(self):
-        for tree in self.dispute_trees:
-            for tree_idx, graph in enumerate(tree.graphs):
-                ideal = False
-                if tree.is_admissible[tree_idx]:
-                    ideal = True
-                    for node in graph.nodes(data=True):
-                        if node[1]['label'] == DT_OPPONENT:
-                            opponent_dispute_tree = self.get_dispute_tree(node[0], tree.arg_index)
-                            if opponent_dispute_tree and opponent_dispute_tree.is_admissible:
-                                ideal = False
-                                break
-                tree.is_ideal[tree_idx] = ideal
-                logging.debug("Dispute Tree <%s, %s> is ideal: %s", tree.root_arg.root, tree_idx,
-                              tree.is_ideal[tree_idx])
+    """
+    Given an argument, which other arguments it can attack?
+    """
 
     def __get_arguments_attackable(self, arg):
-        """
-        Given an argument, which other arguments it can attack?
-        """
         attackables = []
         for argument, i in self.arguments:
             attackable = arg.root in argument.assumptions[i].values()
@@ -114,17 +99,17 @@ class ABA():
 
     def __determine_dispute_tree_is_complete(self):
         for tree in self.dispute_trees:
-            for tree_idx, graph in enumerate(tree.graphs):
+            for l, graph in enumerate(tree.graphs):
                 complete = False
-                if tree.is_admissible[tree_idx]:
+                if tree.is_admissible[l]:
+                    print("is tree admissible:", tree.is_admissible[l])
                     complete = True
-                    if not tree.is_grounded[tree_idx]:  # if tree is grounded, it is guaranteed to be complete
+                    if not tree.is_grounded[l]:
 
-                        # 1. Get all arguments root_arg can attack --> assign as x
-                        # 2. Get all arguments that can be attacked by x --> assign as y
-                        # 3. If ALL y inside root_arg, then complete
+                        # x = all arguments root_ that can attack
+                        # y = all arguments that can be attacked by x
+                        # Complete =  If ALL y are inside root_
                         attackables_by_root = self.__get_arguments_attackable(tree.root_arg)
-                        # Note: since root_arg is admissible, then it is conflict-free, i.e. root_arg is guaranteed not to be inside attackables_by_root
 
                         defendable_arguments = []
                         for attackable, i in attackables_by_root:
@@ -136,11 +121,7 @@ class ABA():
                                 all_in_argument = False
                                 break
                         complete = all_in_argument
-                        # logging.debug("DT<%s> Defendable arguments: %s", tree.root_arg.root, defendable_arguments)
-
-                tree.is_complete[tree_idx] = complete
-                logging.debug("Dispute Tree <%s, %s> is complete: %s", tree.root_arg.root, tree_idx,
-                              tree.is_complete[tree_idx])
+                tree.is_complete[l] = complete
 
     def get_argument(self, symbol, index=0, allow_potential=False):
         source = self.arguments

@@ -1,6 +1,7 @@
 import unittest
-from aba.aba_rule import ABA_Rule
-from aba.aba import ABA
+
+from aba.aba_framework import ABA_framework
+from aba.rulegenerator import RuleGenerator
 
 
 class MultipleDisputeTrees(unittest.TestCase):
@@ -19,12 +20,12 @@ class MultipleDisputeTrees(unittest.TestCase):
         contrary(b2, c).
         """
 
-        aba = ABA()
+        aba = ABA_framework()
         aba.symbols = ('a1', 'a2', 'b1', 'b2', 'c', 'd')
-        aba.rules.append(ABA_Rule(['a1'], 'c'))
-        aba.rules.append(ABA_Rule(['a2'], 'c'))
-        aba.rules.append(ABA_Rule(['b1'], 'd'))
-        aba.rules.append(ABA_Rule(['b2'], 'd'))
+        aba.rules.append(RuleGenerator(['a1'], 'c'))
+        aba.rules.append(RuleGenerator(['a2'], 'c'))
+        aba.rules.append(RuleGenerator(['b1'], 'd'))
+        aba.rules.append(RuleGenerator(['b2'], 'd'))
         aba.contraries['a1'] = 'd'
         aba.contraries['a2'] = 'd'
         aba.contraries['b1'] = 'c'

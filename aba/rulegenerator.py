@@ -1,10 +1,6 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-
-#A set of symbols (possibly empty) supporting a single symbol.
-class ABA_Rule(dict):
+class RuleGenerator(dict):
     def __init__(self, symbols, result=None):
-        dict.__init__(self, symbols=symbols, result=result)  # to make it JSON-serializable
+        dict.__init__(self, symbols=symbols, result=result)
 
         self.symbols = symbols
         self.result = result

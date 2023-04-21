@@ -1,3 +1,2 @@
 DT_PROPONENT = 'Proponent'
 DT_OPPONENT = 'Opponent'
-DT_MAX_BRANCH = 1000
