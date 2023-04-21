@@ -1,0 +1,335 @@
+/usr/local/bin/python3.10 /Users/samane/uni/Trend in IIE/Assignment1/ABA/aba-web/main.py
+hello kitty
+Rule as Carlos wish to see: ['a'] -> p
+Rule as Carlos wish to see: ['b', 's'] -> q
+Rule as Carlos wish to see: ['c'] -> r
+Contrary of  a = q
+Contrary of  b = p
+Contrary of  c = q,r
+ABA Assumptions:  ['a', 'b', 'c']
+ABA non Assumptions:  ['r', 'p', 's', 'q']
+Attacker: q  attacks to assumption a Attacker: q isInRoot:  False  ⧹n Assumption: a isInRoot:  True
+Attacker: p  attacks to assumption b Attacker: p isInRoot:  False  ⧹n Assumption: b isInRoot:  False
+Attacker: q,r  attacks to assumption c Attacker: q,r isInRoot:  False  ⧹n Assumption: c isInRoot:  False
+Root a is conflict free:  True
+Argument a is stable: %s False
+Attacker: q  attacks to assumption a Attacker: q isInRoot:  False  ⧹n Assumption: a isInRoot:  False
+Attacker: p  attacks to assumption b Attacker: p isInRoot:  False  ⧹n Assumption: b isInRoot:  False
+Attacker: q,r  attacks to assumption c Attacker: q,r isInRoot:  False  ⧹n Assumption: c isInRoot:  True
+Root r is conflict free:  True
+Argument r is stable: %s False
+Attacker: q  attacks to assumption a Attacker: q isInRoot:  False  ⧹n Assumption: a isInRoot:  False
+Attacker: p  attacks to assumption b Attacker: p isInRoot:  False  ⧹n Assumption: b isInRoot:  False
+Attacker: q,r  attacks to assumption c Attacker: q,r isInRoot:  False  ⧹n Assumption: c isInRoot:  True
+Root c is conflict free:  True
+Argument c is stable: %s False
+Attacker: q  attacks to assumption a Attacker: q isInRoot:  False  ⧹n Assumption: a isInRoot:  True
+Attacker: p  attacks to assumption b Attacker: p isInRoot:  True  ⧹n Assumption: b isInRoot:  False
+Attacker: q,r  attacks to assumption c Attacker: q,r isInRoot:  False  ⧹n Assumption: c isInRoot:  False
+Root p is conflict free:  True
+Argument p is stable: %s False
+Attacker: q  attacks to assumption a Attacker: q isInRoot:  False  ⧹n Assumption: a isInRoot:  False
+Attacker: p  attacks to assumption b Attacker: p isInRoot:  False  ⧹n Assumption: b isInRoot:  False
+Attacker: q,r  attacks to assumption c Attacker: q,r isInRoot:  False  ⧹n Assumption: c isInRoot:  False
+Root s is conflict free:  True
+Argument s is stable: %s False
+Attacker: q  attacks to assumption a Attacker: q isInRoot:  True  ⧹n Assumption: a isInRoot:  False
+Attacker: p  attacks to assumption b Attacker: p isInRoot:  False  ⧹n Assumption: b isInRoot:  True
+Attacker: q,r  attacks to assumption c Attacker: q,r isInRoot:  False  ⧹n Assumption: c isInRoot:  False
+Root q is conflict free:  True
+Argument q is stable: %s False
+Attacker: q  attacks to assumption a Attacker: q isInRoot:  False  ⧹n Assumption: a isInRoot:  False
+Attacker: p  attacks to assumption b Attacker: p isInRoot:  False  ⧹n Assumption: b isInRoot:  True
+Attacker: q,r  attacks to assumption c Attacker: q,r isInRoot:  False  ⧹n Assumption: c isInRoot:  False
+Root b is conflict free:  True
+Argument b is stable: %s False
+{'label': 'Proponent', 'text_label': '(Proponent) Argument a\nwith assumption(s): a'}
+lable: Proponent
+node.root: a
+{'label': 'Proponent', 'text_label': '(Proponent) Argument a\nwith assumption(s): a'}
+{'label': 'Proponent', 'text_label': '(Proponent) Argument r\nwith assumption(s): c'}
+lable: Proponent
+node.root: r
+{'label': 'Proponent', 'text_label': '(Proponent) Argument r\nwith assumption(s): c'}
+{'label': 'Proponent', 'text_label': '(Proponent) Argument c\nwith assumption(s): c'}
+lable: Proponent
+node.root: c
+{'label': 'Proponent', 'text_label': '(Proponent) Argument c\nwith assumption(s): c'}
+{'label': 'Proponent', 'text_label': '(Proponent) Argument p\nwith assumption(s): a'}
+lable: Proponent
+node.root: p
+{'label': 'Proponent', 'text_label': '(Proponent) Argument p\nwith assumption(s): a'}
+{'label': 'Proponent', 'text_label': '(Proponent) Argument b\nwith assumption(s): b'}
+lable: Proponent
+node.root: b
+{'label': 'Proponent', 'text_label': '(Proponent) Argument b\nwith assumption(s): b'}
+Opponent node p attacking assumption  b  of Proponent node  b
+{'label': 'Opponent', 'text_label': '(Opponent) Argument p\nwith assumption(s): a'}
+lable: Opponent
+node.root: p
+{'label': 'Opponent', 'text_label': '(Opponent) Argument p\nwith assumption(s): a'}
+hello kitty
+Rule as Carlos wish to see: ['a1'] -> c
+Rule as Carlos wish to see: ['a2'] -> c
+Rule as Carlos wish to see: ['b1'] -> d
+Rule as Carlos wish to see: ['b2'] -> d
+Contrary of  a1 = d
+Contrary of  a2 = d
+Contrary of  b1 = c
+Contrary of  b2 = c
+ABA Assumptions:  ['a1', 'b1', 'a2', 'b2']
+ABA non Assumptions:  ['d', 'c']
+Attacker: d  attacks to assumption a1 Attacker: d isInRoot:  True  ⧹n Assumption: a1 isInRoot:  False
+Attacker: d  attacks to assumption a2 Attacker: d isInRoot:  True  ⧹n Assumption: a2 isInRoot:  False
+Attacker: c  attacks to assumption b1 Attacker: c isInRoot:  False  ⧹n Assumption: b1 isInRoot:  True
+Attacker: c  attacks to assumption b2 Attacker: c isInRoot:  False  ⧹n Assumption: b2 isInRoot:  False
+Root d is conflict free:  True
+Attacker: d  attacks to assumption a1 Attacker: d isInRoot:  True  ⧹n Assumption: a1 isInRoot:  False
+Attacker: d  attacks to assumption a2 Attacker: d isInRoot:  True  ⧹n Assumption: a2 isInRoot:  False
+Attacker: c  attacks to assumption b1 Attacker: c isInRoot:  False  ⧹n Assumption: b1 isInRoot:  False
+Attacker: c  attacks to assumption b2 Attacker: c isInRoot:  False  ⧹n Assumption: b2 isInRoot:  True
+Root d is conflict free:  True
+Argument d is stable: %s False
+Argument d is stable: %s False
+Attacker: d  attacks to assumption a1 Attacker: d isInRoot:  False  ⧹n Assumption: a1 isInRoot:  True
+Attacker: d  attacks to assumption a2 Attacker: d isInRoot:  False  ⧹n Assumption: a2 isInRoot:  False
+Attacker: c  attacks to assumption b1 Attacker: c isInRoot:  False  ⧹n Assumption: b1 isInRoot:  False
+Attacker: c  attacks to assumption b2 Attacker: c isInRoot:  False  ⧹n Assumption: b2 isInRoot:  False
+Root a1 is conflict free:  True
+Argument a1 is stable: %s False
+Attacker: d  attacks to assumption a1 Attacker: d isInRoot:  False  ⧹n Assumption: a1 isInRoot:  True
+Attacker: d  attacks to assumption a2 Attacker: d isInRoot:  False  ⧹n Assumption: a2 isInRoot:  False
+Attacker: c  attacks to assumption b1 Attacker: c isInRoot:  True  ⧹n Assumption: b1 isInRoot:  False
+Attacker: c  attacks to assumption b2 Attacker: c isInRoot:  True  ⧹n Assumption: b2 isInRoot:  False
+Root c is conflict free:  True
+Attacker: d  attacks to assumption a1 Attacker: d isInRoot:  False  ⧹n Assumption: a1 isInRoot:  False
+Attacker: d  attacks to assumption a2 Attacker: d isInRoot:  False  ⧹n Assumption: a2 isInRoot:  True
+Attacker: c  attacks to assumption b1 Attacker: c isInRoot:  True  ⧹n Assumption: b1 isInRoot:  False
+Attacker: c  attacks to assumption b2 Attacker: c isInRoot:  True  ⧹n Assumption: b2 isInRoot:  False
+Root c is conflict free:  True
+Argument c is stable: %s False
+Argument c is stable: %s False
+Attacker: d  attacks to assumption a1 Attacker: d isInRoot:  False  ⧹n Assumption: a1 isInRoot:  False
+Attacker: d  attacks to assumption a2 Attacker: d isInRoot:  False  ⧹n Assumption: a2 isInRoot:  True
+Attacker: c  attacks to assumption b1 Attacker: c isInRoot:  False  ⧹n Assumption: b1 isInRoot:  False
+Attacker: c  attacks to assumption b2 Attacker: c isInRoot:  False  ⧹n Assumption: b2 isInRoot:  False
+Root a2 is conflict free:  True
+Argument a2 is stable: %s False
+Attacker: d  attacks to assumption a1 Attacker: d isInRoot:  False  ⧹n Assumption: a1 isInRoot:  False
+Attacker: d  attacks to assumption a2 Attacker: d isInRoot:  False  ⧹n Assumption: a2 isInRoot:  False
+Attacker: c  attacks to assumption b1 Attacker: c isInRoot:  False  ⧹n Assumption: b1 isInRoot:  True
+Attacker: c  attacks to assumption b2 Attacker: c isInRoot:  False  ⧹n Assumption: b2 isInRoot:  False
+Root b1 is conflict free:  True
+Argument b1 is stable: %s False
+Attacker: d  attacks to assumption a1 Attacker: d isInRoot:  False  ⧹n Assumption: a1 isInRoot:  False
+Attacker: d  attacks to assumption a2 Attacker: d isInRoot:  False  ⧹n Assumption: a2 isInRoot:  False
+Attacker: c  attacks to assumption b1 Attacker: c isInRoot:  False  ⧹n Assumption: b1 isInRoot:  False
+Attacker: c  attacks to assumption b2 Attacker: c isInRoot:  False  ⧹n Assumption: b2 isInRoot:  True
+Root b2 is conflict free:  True
+Argument b2 is stable: %s False
+{'label': 'Proponent', 'text_label': '(Proponent) Argument d\nwith assumption(s): b1'}
+lable: Proponent
+node.root: d
+{'label': 'Proponent', 'text_label': '(Proponent) Argument d\nwith assumption(s): b1'}
+Opponent node c attacking assumption  b1  of Proponent node  d
+{'label': 'Opponent', 'text_label': '(Opponent) Argument c\nwith assumption(s): a1'}
+lable: Opponent
+node.root: c
+{'label': 'Opponent', 'text_label': '(Opponent) Argument c\nwith assumption(s): a1'}
+{'label': 'Proponent', 'text_label': '(Proponent) Argument d\nwith assumption(s): b1', 'depth': 0}
+lable: Proponent
+node.root: d
+Opponent node c attacking assumption  b1  of Proponent node  d
+{'label': 'Opponent', 'text_label': '(Opponent) Argument c\nwith assumption(s): a1', 'depth': 1}
+lable: Opponent
+node.root: c
+Opponent node c attacking assumption  b2  of Proponent node  d
+{'label': 'Opponent', 'text_label': '(Opponent) Argument c\nwith assumption(s): a1', 'depth': 1}
+lable: Opponent
+node.root: c
+{'label': 'Proponent', 'text_label': '(Proponent) Argument d\nwith assumption(s): b1', 'depth': 0}
+lable: Proponent
+node.root: d
+Opponent node c attacking assumption  b2  of Proponent node  d
+{'label': 'Opponent', 'text_label': '(Opponent) Argument c\nwith assumption(s): a1', 'depth': 1}
+lable: Opponent
+node.root: c
+{'label': 'Proponent', 'text_label': '(Proponent) Argument d\nwith assumption(s): b1'}
+lable: Proponent
+node.root: d
+{'label': 'Proponent', 'text_label': '(Proponent) Argument d\nwith assumption(s): b1'}
+Opponent node c attacking assumption  b1  of Proponent node  d
+{'label': 'Opponent', 'text_label': '(Opponent) Argument c\nwith assumption(s): a1'}
+lable: Opponent
+node.root: c
+{'label': 'Opponent', 'text_label': '(Opponent) Argument c\nwith assumption(s): a1'}
+{'label': 'Proponent', 'text_label': '(Proponent) Argument d\nwith assumption(s): b1', 'depth': 0}
+lable: Proponent
+node.root: d
+Opponent node c attacking assumption  b1  of Proponent node  d
+{'label': 'Opponent', 'text_label': '(Opponent) Argument c\nwith assumption(s): a1', 'depth': 1}
+lable: Opponent
+node.root: c
+Opponent node c attacking assumption  b2  of Proponent node  d
+{'label': 'Opponent', 'text_label': '(Opponent) Argument c\nwith assumption(s): a1', 'depth': 1}
+lable: Opponent
+node.root: c
+{'label': 'Proponent', 'text_label': '(Proponent) Argument d\nwith assumption(s): b1', 'depth': 0}
+lable: Proponent
+node.root: d
+Opponent node c attacking assumption  b2  of Proponent node  d
+{'label': 'Opponent', 'text_label': '(Opponent) Argument c\nwith assumption(s): a1', 'depth': 1}
+lable: Opponent
+node.root: c
+{'label': 'Proponent', 'text_label': '(Proponent) Argument a1\nwith assumption(s): a1'}
+lable: Proponent
+node.root: a1
+{'label': 'Proponent', 'text_label': '(Proponent) Argument a1\nwith assumption(s): a1'}
+Opponent node d attacking assumption  a1  of Proponent node  a1
+{'label': 'Opponent', 'text_label': '(Opponent) Argument d\nwith assumption(s): b1'}
+lable: Opponent
+node.root: d
+{'label': 'Opponent', 'text_label': '(Opponent) Argument d\nwith assumption(s): b1'}
+{'label': 'Proponent', 'text_label': '(Proponent) Argument c\nwith assumption(s): a1'}
+lable: Proponent
+node.root: c
+{'label': 'Proponent', 'text_label': '(Proponent) Argument c\nwith assumption(s): a1'}
+Opponent node d attacking assumption  a1  of Proponent node  c
+{'label': 'Opponent', 'text_label': '(Opponent) Argument d\nwith assumption(s): b1', 'depth': 1}
+lable: Opponent
+node.root: d
+Opponent node d attacking assumption  a2  of Proponent node  c
+{'label': 'Opponent', 'text_label': '(Opponent) Argument d\nwith assumption(s): b1', 'depth': 1}
+lable: Opponent
+node.root: d
+{'label': 'Proponent', 'text_label': '(Proponent) Argument c\nwith assumption(s): a1', 'depth': 2}
+lable: Proponent
+node.root: c
+{'label': 'Proponent', 'text_label': '(Proponent) Argument c\nwith assumption(s): a1'}
+lable: Proponent
+node.root: c
+{'label': 'Proponent', 'text_label': '(Proponent) Argument c\nwith assumption(s): a1'}
+Opponent node d attacking assumption  a1  of Proponent node  c
+{'label': 'Opponent', 'text_label': '(Opponent) Argument d\nwith assumption(s): b1'}
+lable: Opponent
+node.root: d
+{'label': 'Opponent', 'text_label': '(Opponent) Argument d\nwith assumption(s): b1'}
+{'label': 'Proponent', 'text_label': '(Proponent) Argument c\nwith assumption(s): a1', 'depth': 0}
+lable: Proponent
+node.root: c
+Opponent node d attacking assumption  a1  of Proponent node  c
+{'label': 'Opponent', 'text_label': '(Opponent) Argument d\nwith assumption(s): b1', 'depth': 1}
+lable: Opponent
+node.root: d
+Opponent node d attacking assumption  a2  of Proponent node  c
+{'label': 'Opponent', 'text_label': '(Opponent) Argument d\nwith assumption(s): b1', 'depth': 1}
+lable: Opponent
+node.root: d
+{'label': 'Proponent', 'text_label': '(Proponent) Argument c\nwith assumption(s): a1', 'depth': 0}
+lable: Proponent
+node.root: c
+Opponent node d attacking assumption  a2  of Proponent node  c
+{'label': 'Opponent', 'text_label': '(Opponent) Argument d\nwith assumption(s): b1', 'depth': 1}
+lable: Opponent
+node.root: d
+{'label': 'Proponent', 'text_label': '(Proponent) Argument c\nwith assumption(s): a1'}
+lable: Proponent
+node.root: c
+{'label': 'Proponent', 'text_label': '(Proponent) Argument c\nwith assumption(s): a1'}
+Opponent node d attacking assumption  a1  of Proponent node  c
+{'label': 'Opponent', 'text_label': '(Opponent) Argument d\nwith assumption(s): b1'}
+lable: Opponent
+node.root: d
+{'label': 'Opponent', 'text_label': '(Opponent) Argument d\nwith assumption(s): b1'}
+{'label': 'Proponent', 'text_label': '(Proponent) Argument c\nwith assumption(s): a1', 'depth': 0}
+lable: Proponent
+node.root: c
+Opponent node d attacking assumption  a1  of Proponent node  c
+{'label': 'Opponent', 'text_label': '(Opponent) Argument d\nwith assumption(s): b1', 'depth': 1}
+lable: Opponent
+node.root: d
+Opponent node d attacking assumption  a2  of Proponent node  c
+{'label': 'Opponent', 'text_label': '(Opponent) Argument d\nwith assumption(s): b1', 'depth': 1}
+lable: Opponent
+node.root: d
+{'label': 'Proponent', 'text_label': '(Proponent) Argument c\nwith assumption(s): a1', 'depth': 0}
+lable: Proponent
+node.root: c
+Opponent node d attacking assumption  a2  of Proponent node  c
+{'label': 'Opponent', 'text_label': '(Opponent) Argument d\nwith assumption(s): b1', 'depth': 1}
+lable: Opponent
+node.root: d
+{'label': 'Proponent', 'text_label': '(Proponent) Argument a2\nwith assumption(s): a2'}
+lable: Proponent
+node.root: a2
+{'label': 'Proponent', 'text_label': '(Proponent) Argument a2\nwith assumption(s): a2'}
+Opponent node d attacking assumption  a2  of Proponent node  a2
+{'label': 'Opponent', 'text_label': '(Opponent) Argument d\nwith assumption(s): b1'}
+lable: Opponent
+node.root: d
+{'label': 'Opponent', 'text_label': '(Opponent) Argument d\nwith assumption(s): b1'}
+{'label': 'Proponent', 'text_label': '(Proponent) Argument c\nwith assumption(s): a1'}
+lable: Proponent
+node.root: c
+{'label': 'Proponent', 'text_label': '(Proponent) Argument c\nwith assumption(s): a1'}
+Opponent node d attacking assumption  a1  of Proponent node  c
+{'label': 'Opponent', 'text_label': '(Opponent) Argument d\nwith assumption(s): b1', 'depth': 1}
+lable: Opponent
+node.root: d
+Opponent node d attacking assumption  a2  of Proponent node  c
+{'label': 'Opponent', 'text_label': '(Opponent) Argument d\nwith assumption(s): b1', 'depth': 1}
+lable: Opponent
+node.root: d
+{'label': 'Proponent', 'text_label': '(Proponent) Argument c\nwith assumption(s): a1', 'depth': 2}
+lable: Proponent
+node.root: c
+{'label': 'Proponent', 'text_label': '(Proponent) Argument b1\nwith assumption(s): b1'}
+lable: Proponent
+node.root: b1
+{'label': 'Proponent', 'text_label': '(Proponent) Argument b1\nwith assumption(s): b1'}
+Opponent node c attacking assumption  b1  of Proponent node  b1
+{'label': 'Opponent', 'text_label': '(Opponent) Argument c\nwith assumption(s): a1'}
+lable: Opponent
+node.root: c
+{'label': 'Opponent', 'text_label': '(Opponent) Argument c\nwith assumption(s): a1'}
+{'label': 'Proponent', 'text_label': '(Proponent) Argument d\nwith assumption(s): b1'}
+lable: Proponent
+node.root: d
+{'label': 'Proponent', 'text_label': '(Proponent) Argument d\nwith assumption(s): b1'}
+Opponent node c attacking assumption  b1  of Proponent node  d
+{'label': 'Opponent', 'text_label': '(Opponent) Argument c\nwith assumption(s): a1', 'depth': 1}
+lable: Opponent
+node.root: c
+Opponent node c attacking assumption  b2  of Proponent node  d
+{'label': 'Opponent', 'text_label': '(Opponent) Argument c\nwith assumption(s): a1', 'depth': 1}
+lable: Opponent
+node.root: c
+{'label': 'Proponent', 'text_label': '(Proponent) Argument d\nwith assumption(s): b1', 'depth': 2}
+lable: Proponent
+node.root: d
+{'label': 'Proponent', 'text_label': '(Proponent) Argument b2\nwith assumption(s): b2'}
+lable: Proponent
+node.root: b2
+{'label': 'Proponent', 'text_label': '(Proponent) Argument b2\nwith assumption(s): b2'}
+Opponent node c attacking assumption  b2  of Proponent node  b2
+{'label': 'Opponent', 'text_label': '(Opponent) Argument c\nwith assumption(s): a1'}
+lable: Opponent
+node.root: c
+{'label': 'Opponent', 'text_label': '(Opponent) Argument c\nwith assumption(s): a1'}
+{'label': 'Proponent', 'text_label': '(Proponent) Argument d\nwith assumption(s): b1'}
+lable: Proponent
+node.root: d
+{'label': 'Proponent', 'text_label': '(Proponent) Argument d\nwith assumption(s): b1'}
+Opponent node c attacking assumption  b1  of Proponent node  d
+{'label': 'Opponent', 'text_label': '(Opponent) Argument c\nwith assumption(s): a1', 'depth': 1}
+lable: Opponent
+node.root: c
+Opponent node c attacking assumption  b2  of Proponent node  d
+{'label': 'Opponent', 'text_label': '(Opponent) Argument c\nwith assumption(s): a1', 'depth': 1}
+lable: Opponent
+node.root: c
+{'label': 'Proponent', 'text_label': '(Proponent) Argument d\nwith assumption(s): b1', 'depth': 2}
+lable: Proponent
+node.root: d
+
+Process finished with exit code 0
